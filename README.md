@@ -1,5 +1,7 @@
 # AniRec Personalized Anime Recommendation Website
 
+![AniRecLogo3](https://github.com/BenasUrba/AniRec/assets/141029588/ab456cda-796b-4b35-bb73-fc9fc995a65c)
+
 Recommender systems are widely used in different online platforms such as e-commerce websites and online streaming services. These systems are used to help find and suggest relevant items to users, often based on the user’s past interactions which can help personalize the recommendations. Another benefit of recommender systems is its ability to save the time taken for users to find recommendations manually. 
 
 Anime are Japanese cartoons that have been rising in popularity to overseas consumers in recent years. The anime industry reached a revenue of 2.93 trillion Japanese Yen (approximately £18.11 billion GBP) in 2022 (Statista Research Department, 2024), where 1.46 trillion Japanese Yen (approximately £9.03 billion GBP) make up the overseas sales of anime (Statista Research Department, 2024). Rapid growth for the market, means more animes will be produced as there are more users to satisfy and appeal to. With vast amount of animes currently available and releasing, there comes an issue of finding relevant animes that users will enjoy, here recommendation systems can help users finding relevant recommendations.
