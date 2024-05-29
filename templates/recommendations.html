@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniRec Recommendations</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/recommendations.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var currentPage = 0;
+            var recommendationsPerPage = 3;
+
+            function showRecommendations() {
+                var startIndex = currentPage * recommendationsPerPage;
+                var endIndex = startIndex + recommendationsPerPage;
+                $(".anime-list .poster").hide();
+                $(".anime-list .poster").slice(startIndex, endIndex).show();
+            }
+
+            showRecommendations();
+
+            $("#prevBtn").click(function() {
+                if (currentPage > 0) {
+                    currentPage--;
+                    showRecommendations();
+                }
+            });
+
+            $("#nextBtn").click(function() {
+                var totalRecommendations = $(".anime-list .poster").length;
+                var totalPages = Math.ceil(totalRecommendations / recommendationsPerPage);
+                if (currentPage < totalPages - 1) {
+                    currentPage++;
+                    showRecommendations();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="ani-rec-title" style="text-shadow: 0 0 5px #000;">
+            <a href="/" style="text-decoration: none; color: inherit;">Ani<span style="color: red;">Rec</span></a>
+        </h1>
+        <div class="anime-list">
+            {% for anime_id in recommendations %}
+                {% set anime_info = anime_data[anime_data['MAL_ID'] == anime_id].iloc[0] %}
+                <div class="poster">
+                    <a href="https://myanimelist.net/anime/{{ anime_info['MAL_ID'] }}" target="_blank">
+                        <img src="{{ get_anime_image(anime_id) }}" alt="Anime Image">
+                    </a>
+                    <h3>{{ anime_info['Name'] }}</h3>
+                    <p>Score: {{ anime_info['Score'] }}</p>
+                    <p>Genres: {{ anime_info['Genres'] }}</p>
+                    <p>Type: {{ anime_info['Type'] }}</p>
+                    <p>Episodes: {{ anime_info['Episodes'] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="controls">
+            <button id="prevBtn">Previous</button>
+            <button id="nextBtn">Next</button>
+        </div>
+    </div>
+</body>
+</html>

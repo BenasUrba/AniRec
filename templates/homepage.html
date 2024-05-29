@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniRec</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/homepage.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="ani-rec-title" style="text-shadow: 0 0 5px #000;">Ani<span style="color: red;">Rec</span></h1>
+        <h3><span style="color: white;">Receive personalized recommendations based on your previous interactions, or find similar recommendations to an anime!</span></h3>
+        {% if error_message %}
+        <h2 style="color: maroon;">{{ error_message }}</h2>
+        {% endif %}
+        <form action="/recommendations" method="post" class="user-form" autocomplete="off">
+            <label for="username">Enter your MyAnimeList username:</label>
+            <input type="text" id="username" name="username" {% if username_error %}class="error"{% endif %}>
+            <label for="anime_id">Or enter an anime ID:</label>
+            <input type="text" id="anime_id" name="anime_id" {% if anime_id_error %}class="error"{% endif %}>
+            <div style="margin-top: 30px;">
+            <button type="submit" style="background-color: #9B111E; color: white;">Get Recommendations</button>
+                </div>
+        </form>
+    </div>
+    <h1 style="margin-left: 100px;">Check Out These Popular Animes!</h1>
+    <div class="poster-container">
+        {% for anime_id in popular_animes %}
+        {% set anime_info = anime_data[anime_data['MAL_ID'] == anime_id].iloc[0] %}
+        <div class="poster">
+            <a href="https://myanimelist.net/anime/{{ anime_info['MAL_ID'] }}" target="_blank">
+                <img src="{{ get_anime_image(anime_id) }}" alt="Anime Poster {{ anime_id }}" class="poster-img">
+            </a>
+            <div class="poster-info">
+                <h3>{{ anime_info['Name'] }}</h3>
+                <p>Score: {{ anime_info['Score'] }}</p>
+                <p>Genres: {{ anime_info['Genres'] }}</p>
+                <p>Type: {{ anime_info['Type'] }}</p>
+                <p>Episodes: {{ anime_info['Episodes'] }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</body>
+</html>

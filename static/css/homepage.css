@@ -1,0 +1,76 @@
+body {
+    background-color: #6082B6;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ani-rec-title {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.user-form {
+    margin-top: 50px;
+}
+
+h1 {
+    color: white;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+input.error {
+    border: 2px solid red;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+.poster-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.poster {
+    margin: 10px;
+    text-align: center;
+    width: 250px;
+}
+
+.poster-img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.poster-info {
+    font-size: 14px;
+    margin-top: 10px;
+}
