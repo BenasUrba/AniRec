@@ -10,3 +10,15 @@ To address this challenge, this paper focuses on improving the performance of an
 AniRec can offer personalized recommendations based on a users previous anime interactions from their accounts in MyAnimeList using a hybrid system of Singular Value Decomposition and a Content-Based Model. Moreover, if users do not have a MyAnimeList account or do not want personalization in their recommendations and instead want similar anime recommendations, they can opt for a single anime id option, which displays anime which have the most similar features to the one inputted. As this focuses on the features of the anime, a content based model was utilized for its capabilities at identifying similarities between features in anime. It also offers other features such as the ability to see popular anime at the home page for fast recommendations or if users dont know for which anime they want recomendations. Furtermore, each anime poster is interactable and redirects the user to a MyAnimeList website of that anime. Once recommendations are generated, 3 recommendations are shown at once, however, a user can use the 'Next' and 'Previous' button to access the next 3 or previous 3 anime, there is a total of 52 anime.
 
 This website utilizes the MyAnimeList API and therefore requires an access token to use, this has been removed from the code due to confidentiality purposes, but the code for receiving and using the access token has been left if anyone wishes to try out the website/code. Moreover, the pre-trained Singular Value Decomposition (SVD) model has not been added as it was too big of a file size (52MB). 
+
+# AniRec Homepage
+![AniRec_Home](https://github.com/BenasUrba/AniRec/assets/141029588/a607f4ef-b8f2-4f40-8b82-38bc124b68c0)
+
+# AniRec Generated Recommendations Page
+![AniRec_Recs](https://github.com/BenasUrba/AniRec/assets/141029588/b20f7170-b8c8-412d-8427-ebd1956a6611)
+
+# AniRec Logo
+![AniRecLogo3](https://github.com/BenasUrba/AniRec/assets/141029588/ab456cda-796b-4b35-bb73-fc9fc995a65c)
+
+
+
