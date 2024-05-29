@@ -19,6 +19,10 @@ This website utilizes the MyAnimeList API and therefore requires an access token
 # AniRec Generated Recommendations Page
 ![AniRec_Recs](https://github.com/BenasUrba/AniRec/assets/141029588/b20f7170-b8c8-412d-8427-ebd1956a6611)
 
+# AniRec website redirect once you click on poster (Example: Fullmetal Alchemist: Brotherhood)
+![image](https://github.com/BenasUrba/AniRec/assets/141029588/5344693f-efb3-4c12-8587-c382cdf810a4)
+
+
 # AniRec Logo
 ![AniRecLogo3](https://github.com/BenasUrba/AniRec/assets/141029588/ab456cda-796b-4b35-bb73-fc9fc995a65c)
 
